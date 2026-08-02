@@ -5,23 +5,24 @@
 class Stormlight < Formula
   desc "Workspace-native control surface for coding agents"
   homepage "https://github.com/trentkm/stormlight"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   depends_on "tmux"
+  depends_on "yazi"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/trentkm/stormlight/releases/download/v0.1.1/stormlight_0.1.1_darwin_amd64.tar.gz"
-      sha256 "5db1a71b83bc18e1aec6f51f2b5e20651002477b3ec25cf1f453be6622e5acf8"
+      url "https://github.com/trentkm/stormlight/releases/download/v0.1.2/stormlight_0.1.2_darwin_amd64.tar.gz"
+      sha256 "b6c4991d566bc0b74622ae044fe8f150d28c329fbf37c150665e17506458ff8b"
 
       define_method(:install) do
         bin.install "stormlight"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/trentkm/stormlight/releases/download/v0.1.1/stormlight_0.1.1_darwin_arm64.tar.gz"
-      sha256 "1160700d2f9d83f47592c4795f9f53b9a03e1dfe098f4b0ea0e37907a6546625"
+      url "https://github.com/trentkm/stormlight/releases/download/v0.1.2/stormlight_0.1.2_darwin_arm64.tar.gz"
+      sha256 "bef37e01c15dcba2f5ff29986e1583acc3d9ba90d81c940532ad52f1455ecf26"
 
       define_method(:install) do
         bin.install "stormlight"
@@ -31,19 +32,25 @@ class Stormlight < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/trentkm/stormlight/releases/download/v0.1.1/stormlight_0.1.1_linux_amd64.tar.gz"
-      sha256 "d3fda4c3cd8b0967e521edc9c1373700489d860e16b3e7bfaef6832014ed8822"
+      url "https://github.com/trentkm/stormlight/releases/download/v0.1.2/stormlight_0.1.2_linux_amd64.tar.gz"
+      sha256 "9ba2bc91a12732683000864d0d7a51bb9435a00e9528dfa711bb53698a88fcf7"
       define_method(:install) do
         bin.install "stormlight"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/trentkm/stormlight/releases/download/v0.1.1/stormlight_0.1.1_linux_arm64.tar.gz"
-      sha256 "32e2df640e1f7dc3ec210298248fe1fa22652c5a0862a2a39104512a2a636313"
+      url "https://github.com/trentkm/stormlight/releases/download/v0.1.2/stormlight_0.1.2_linux_arm64.tar.gz"
+      sha256 "96704d4f81988b9a995da67325622c93c69e82eb8f3168e60e5eccfee1d24c68"
       define_method(:install) do
         bin.install "stormlight"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      Optional: install neovim to edit agent tasks in a popup (brew install neovim).
+    EOS
   end
 
   test do
