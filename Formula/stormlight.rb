@@ -5,23 +5,23 @@
 class Stormlight < Formula
   desc "Workspace-native control surface for coding agents"
   homepage "https://github.com/trentkm/stormlight"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   depends_on "tmux"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/trentkm/stormlight/releases/download/v0.1.0/stormlight_0.1.0_darwin_amd64.tar.gz"
-      sha256 "2468c7276f0b5abe5d86786a0a4d0186bd78809e0ee1128159a909ec3254c804"
+      url "https://github.com/trentkm/stormlight/releases/download/v0.1.1/stormlight_0.1.1_darwin_amd64.tar.gz"
+      sha256 "5db1a71b83bc18e1aec6f51f2b5e20651002477b3ec25cf1f453be6622e5acf8"
 
       define_method(:install) do
         bin.install "stormlight"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/trentkm/stormlight/releases/download/v0.1.0/stormlight_0.1.0_darwin_arm64.tar.gz"
-      sha256 "22a9126f72177c2d06daba4685dc2a85ac49223df5e124e859cb4ee924a8a5bd"
+      url "https://github.com/trentkm/stormlight/releases/download/v0.1.1/stormlight_0.1.1_darwin_arm64.tar.gz"
+      sha256 "1160700d2f9d83f47592c4795f9f53b9a03e1dfe098f4b0ea0e37907a6546625"
 
       define_method(:install) do
         bin.install "stormlight"
@@ -31,15 +31,15 @@ class Stormlight < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/trentkm/stormlight/releases/download/v0.1.0/stormlight_0.1.0_linux_amd64.tar.gz"
-      sha256 "e88a907fa91fcb2b0e4819f85cf6bc71569f06c0c1c0723fd6fbc3323f024c52"
+      url "https://github.com/trentkm/stormlight/releases/download/v0.1.1/stormlight_0.1.1_linux_amd64.tar.gz"
+      sha256 "d3fda4c3cd8b0967e521edc9c1373700489d860e16b3e7bfaef6832014ed8822"
       define_method(:install) do
         bin.install "stormlight"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/trentkm/stormlight/releases/download/v0.1.0/stormlight_0.1.0_linux_arm64.tar.gz"
-      sha256 "18a212d10e1f85c3f79315ae7360b4d2ed5cb7c2d997575fd949a4f814546f77"
+      url "https://github.com/trentkm/stormlight/releases/download/v0.1.1/stormlight_0.1.1_linux_arm64.tar.gz"
+      sha256 "32e2df640e1f7dc3ec210298248fe1fa22652c5a0862a2a39104512a2a636313"
       define_method(:install) do
         bin.install "stormlight"
       end
